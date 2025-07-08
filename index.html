@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NyxVaultX</title>
+    <link rel="shortcut icon" href="theme/wallpaper/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="theme/main.css">
+    <script src="theme/Script/main.js"></script>
+</head>
+
+<body>
+    <audio id="myAudio" src="Sound.mp3" autoplay loop style="position: absolute; left: -9999px;"></audio>
+    <script>
+        // Fix for browsers blocking autoplay: play after first user interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('myAudio');
+            function tryPlay() {
+                audio.play().catch(() => {});
+                document.removeEventListener('click', tryPlay);
+                document.removeEventListener('keydown', tryPlay);
+            }
+            document.addEventListener('click', tryPlay);
+            document.addEventListener('keydown', tryPlay);
+        });
+    </script>
+    <div class="Black-bg-trasparent">
+        <div class="effect-rain-sparkles">
+            <div class="sparkle"></div>
+        </div>
+        <div class="Crad">
+            <img src="theme/wallpaper/nyxvaultx.jpg" alt="NyxVaultX Logo" class="logo">
+            <div class="User-Name">
+                <h1 class="Username-Gradient-Neon">NyxVaultX</h1>
+                <p class="User-Description">Hi, I'm NyxVaultX I do programming and hacking on a daily basis and I'm an
+                    Active Blackhat</p>
+                <div class="User-SocialMedia">
+                    <a href="https://github.com/NyxVaultX" class="social-link"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.instagram.com/nyxvaultx" class="social-link"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sparkleContainer = document.querySelector('.effect-rain-sparkles');
+            for (let i = 0; i < 100; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.animationDuration = Math.random() * 2 + 1 + 's';
+                sparkleContainer.appendChild(sparkle);
+            }
+        });
+    </script>
+</body>
+</html>
